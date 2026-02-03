@@ -1,0 +1,283 @@
+{
+    "skills": [
+        {
+            "name": "Java",
+            "type": "technical",
+            "keywords": [
+                "java",
+                "j2ee",
+                "jvm",
+                "spring"
+            ]
+        },
+        {
+            "name": "Python",
+            "type": "technical",
+            "keywords": [
+                "python",
+                "django",
+                "flask",
+                "pandas"
+            ]
+        },
+        {
+            "name": "JavaScript",
+            "type": "technical",
+            "keywords": [
+                "javascript",
+                "js",
+                "es6",
+                "node"
+            ]
+        },
+        {
+            "name": "React",
+            "type": "technical",
+            "keywords": [
+                "react",
+                "reactjs",
+                "react.js",
+                "jsx"
+            ]
+        },
+        {
+            "name": "Angular",
+            "type": "technical",
+            "keywords": [
+                "angular",
+                "angularjs"
+            ]
+        },
+        {
+            "name": "SQL",
+            "type": "technical",
+            "keywords": [
+                "sql",
+                "mysql",
+                "postgres",
+                "database"
+            ]
+        },
+        {
+            "name": "NoSQL",
+            "type": "technical",
+            "keywords": [
+                "nosql",
+                "mongodb",
+                "dynamodb"
+            ]
+        },
+        {
+            "name": "Docker",
+            "type": "technical",
+            "keywords": [
+                "docker",
+                "container",
+                "kubernetes"
+            ]
+        },
+        {
+            "name": "AWS",
+            "type": "technical",
+            "keywords": [
+                "aws",
+                "amazon web services",
+                "ec2",
+                "lambda"
+            ]
+        },
+        {
+            "name": "System Design",
+            "type": "technical",
+            "keywords": [
+                "system design",
+                "distributed systems",
+                "microservices"
+            ]
+        },
+        {
+            "name": "Git",
+            "type": "technical",
+            "keywords": [
+                "git",
+                "github",
+                "gitlab",
+                "version control"
+            ]
+        },
+        {
+            "name": "Communication",
+            "type": "soft",
+            "keywords": [
+                "communication",
+                "verbal",
+                "written",
+                "presentation"
+            ]
+        },
+        {
+            "name": "Teamwork",
+            "type": "soft",
+            "keywords": [
+                "teamwork",
+                "collaboration",
+                "team player"
+            ]
+        },
+        {
+            "name": "Leadership",
+            "type": "soft",
+            "keywords": [
+                "leadership",
+                "mentor",
+                "management",
+                "lead"
+            ]
+        },
+        {
+            "name": "Problem Solving",
+            "type": "soft",
+            "keywords": [
+                "problem solving",
+                "analytical",
+                "troubleshooting"
+            ]
+        },
+        {
+            "name": "Agile",
+            "type": "professional",
+            "keywords": [
+                "agile",
+                "scrum",
+                "kanban"
+            ]
+        },
+        {
+            "name": "Project Management",
+            "type": "professional",
+            "keywords": [
+                "project management",
+                "jira",
+                "planning"
+            ]
+        },
+        {
+            "name": "Documentation",
+            "type": "professional",
+            "keywords": [
+                "documentation",
+                "technical writing"
+            ]
+        },
+        {
+            "name": "Spring Boot",
+            "type": "technical",
+            "keywords": [
+                "spring boot",
+                "springboot"
+            ]
+        },
+        {
+            "name": "HTML",
+            "type": "technical",
+            "keywords": [
+                "html",
+                "html5"
+            ]
+        },
+        {
+            "name": "CSS",
+            "type": "technical",
+            "keywords": [
+                "css",
+                "css3"
+            ]
+        },
+        {
+            "name": "TypeScript",
+            "type": "technical",
+            "keywords": [
+                "typescript",
+                "ts"
+            ]
+        },
+        {
+            "name": "Microservices",
+            "type": "technical",
+            "keywords": [
+                "microservices",
+                "micro-services"
+            ]
+        },
+        {
+            "name": "Adaptability",
+            "type": "soft",
+            "keywords": [
+                "adaptability",
+                "flexible",
+                "adjust"
+            ]
+        },
+        {
+            "name": "API Documentation",
+            "type": "professional",
+            "keywords": [
+                "api documentation",
+                "swagger",
+                "openapi"
+            ]
+        }
+    ],
+    "roles": {
+        "frontend": {
+            "tech": [
+                "React",
+                "JavaScript",
+                "HTML",
+                "CSS",
+                "TypeScript"
+            ],
+            "soft": [
+                "Communication",
+                "Teamwork"
+            ],
+            "prof": [
+                "Agile"
+            ]
+        },
+        "backend": {
+            "tech": [
+                "Java",
+                "Spring Boot",
+                "SQL",
+                "Microservices",
+                "System Design"
+            ],
+            "soft": [
+                "Problem Solving",
+                "Adaptability",
+                "Communication",
+                "Teamwork"
+            ],
+            "prof": [
+                "API Documentation"
+            ]
+        },
+        "fullstack": {
+            "tech": [
+                "React",
+                "Java",
+                "Spring Boot",
+                "SQL",
+                "JavaScript"
+            ],
+            "soft": [
+                "Problem Solving",
+                "Communication"
+            ],
+            "prof": [
+                "Agile"
+            ]
+        }
+    }
+}

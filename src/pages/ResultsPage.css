@@ -1,0 +1,1280 @@
+/* ResultsPage.css - Polished Professional Dashboard - STRICT ALIGNMENT */
+.results-content-wrapper {
+    min-height: calc(100vh - 60px);
+    padding: 2rem;
+    background: #0f172a;
+    font-family: 'Inter', system-ui, sans-serif;
+    color: #f8fafc;
+}
+
+/* Header - Aligned */
+.results-header {
+    max-width: 900px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 0.5rem;
+}
+
+/* ... headers ... */
+.header-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.header-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+/* Bento Grid - Uniform Gap */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    /* UNIFORM GAP */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Common Card - Uniform Padding */
+.bento-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Consistent Border */
+    border-radius: 12px;
+    /* Uniform Radius */
+    padding: 1.5rem;
+    /* UNIFORM PADDING */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-card-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 1.25rem;
+    /* Uniform Spacing */
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Divider Line */
+    padding-bottom: 0.5rem;
+}
+
+/* Metrics - Center Aligned */
+.metric-card {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+}
+
+/* ... Metric internals same ... */
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.03em;
+}
+
+/* RESUME AUDIT - Perfectly Aligned 30/70 */
+.resume-card-layout {
+    grid-column: span 3;
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    padding: 1.5rem;
+    border-top: 4px solid #8b5cf6;
+    border-left: none;
+    /* No vertical marker */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.audit-score-section {
+    flex: 0 0 180px;
+    /* Fixed Clean Width */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Content Area */
+.audit-details-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    /* Fixed Left, Fluid Right */
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.audit-column-add {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 1.5rem;
+    height: 100%;
+}
+
+.audit-column-update {
+    padding-left: 0.5rem;
+    /* Tweak check */
+    /* actually make it distinct */
+    padding-left: 0;
+}
+
+/* Wait, in 1fr 1.5fr logic, allow standard padding */
+.audit-column-update {
+    padding-left: 0;
+}
+
+/* Action Grid */
+.action-cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+.action-card-mini {
+    padding: 1rem;
+    gap: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* Vertical Center */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    height: 100%;
+}
+
+/* SKILLS CARD */
+.skill-card {
+    grid-column: span 3;
+    border-top: 4px solid #3b82f6;
+    border-left: none;
+    padding: 1.5rem;
+}
+
+.skill-row-link {
+    display: grid;
+    grid-template-columns: 160px 1fr 50px 30px;
+    /* Strict Columns */
+    align-items: center;
+    /* Vertical Center */
+    gap: 1.5rem;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.skill-name-neat {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #e2e8f0;
+    text-align: left;
+}
+
+/* FOCUS CARD (Sidebar on Right) */
+.focus-card {
+    grid-column: span 1;
+    /* Takes 1/3 Width */
+    border-top: 4px solid #f87171;
+    border-left: none;
+    padding: 1.5rem;
+    height: 100%;
+    /* Match height */
+}
+
+.focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.action-item {
+    padding: 1.25rem;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 110px;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.action-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(248, 113, 113, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.action-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fca5a5;
+    /* red-300 */
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.action-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.action-desc {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+.action-pill {
+    font-size: 0.7rem;
+    background: rgba(30, 41, 59, 0.5);
+    padding: 2px 8px;
+    border-radius: 4px;
+    color: #93c5fd;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+/* ROADMAP */
+.roadmap-card-wide {
+    grid-column: span 3;
+    border-top: 4px solid #10b981;
+    border-left: none;
+    padding: 1.5rem;
+}
+
+/* ... animations preserved ... */
+.roadmap-steps-container {
+    gap: 1.5rem;
+}
+
+
+/* Roadmap Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.roadmap-header-advisor {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(59, 130, 246, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+    line-height: 1.5;
+}
+
+.roadmap-step-card-detailed {
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    opacity: 0;
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.roadmap-step-card-detailed:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+}
+
+.step-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.65rem;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.step-main-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+    padding-right: 3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.step-duration-icon {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.step-tasks-list {
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.task-item {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: start;
+    gap: 0.6rem;
+}
+
+.task-bullet {
+    min-width: 6px;
+    height: 6px;
+    background: #3b82f6;
+    border-radius: 50%;
+    margin-top: 7px;
+    box-shadow: 0 0 5px #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-card,
+    .skill-card,
+    .focus-card,
+    .roadmap-card-wide,
+    .resume-audit-card {
+        grid-column: span 1;
+    }
+
+    .audit-details-grid {
+        grid-template-columns: 1fr;
+        /* Stack on mobile */
+    }
+
+    .action-cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading State */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    color: white;
+}
+
+.loading-spinner {
+    font-size: 2.5rem;
+    animation: spin 1.5s infinite linear;
+    margin-bottom: 1rem;
+}
+
+.loading-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.loading-subtitle {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn-new-assessment {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.8rem !important;
+}
+
+/* Error */
+.error-state {
+    text-align: center;
+    color: #fca5a5;
+    margin-top: 5rem;
+    font-size: 1.1rem;
+}
+
+.header-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.header-role {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1.2;
+}
+
+/* Bento Grid Layout - Ultra Compact */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 0.75rem;
+    max-width: 900px;
+    /* High density */
+    margin: 0 auto;
+}
+
+/* Common Card Styles */
+.bento-card {
+    background: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    /* Tighter radius */
+    padding: 1rem;
+    /* Compact padding */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.bento-card-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- ROW 1: Metrics --- */
+.metric-card {
+    grid-column: span 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0.5rem;
+}
+
+/* Large Score Ring */
+.score-ring-large {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.5rem;
+}
+
+.circular-chart-large {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.score-text-large {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.metric-value {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.03em;
+}
+
+.metric-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* --- ROW 2: RESUME AUDIT (Compact) --- */
+/* --- ROW 2: RESUME AUDIT (Side-by-Side Left) --- */
+.resume-audit-card {
+    grid-column: span 2;
+    display: flex;
+    gap: 1.5rem;
+    align-items: stretch;
+    background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%);
+    padding: 1.5rem;
+    border-top: 4px solid #8b5cf6;
+    /* Horizontal Top Marker */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Left: Score Section (Kept on Left for Dashboard feel) */
+.audit-score-section {
+    flex: 0 0 160px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    /* Keep this vertical separator for score */
+    padding-right: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ... internals for score ... */
+.score-ring-container {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 0.75rem;
+}
+
+.score-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: white;
+}
+
+.section-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+}
+
+.gemini-badge {
+    font-size: 0.65rem;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    color: white;
+    padding: 3px 10px;
+    border-radius: 9999px;
+    font-weight: 600;
+}
+
+/* Right: Content Area (Vertical Stack inside) */
+.audit-content-area {
+    flex: 1;
+    position: relative;
+    width: 100%;
+}
+
+/* States */
+.audit-lock-state {
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.lock-title {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.btn-audit-run {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    border: none;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    padding: 0.5rem 1.75rem;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.btn-audit-run:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.lock-subtitle {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+}
+
+/* 2-Column Grid (Side-by-Side to fill space) */
+.audit-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    /* Analysis | Actions (Wide) */
+    gap: 2rem;
+    width: 100%;
+    align-self: flex-start;
+}
+
+/* Internal Columns */
+.audit-column-add {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    /* Vertical Separator restored for Split */
+    border-bottom: none;
+    padding-right: 1.5rem;
+    padding-bottom: 0;
+    height: 100%;
+}
+
+.audit-column-update {
+    padding-left: 1.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.column-header-red,
+.column-header-green,
+.column-header-yellow {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.25rem;
+    display: block;
+    width: 100%;
+}
+
+/* Internals */
+.tags-container {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+.tag-red {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.list-item-green {
+    font-size: 0.85rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Tiled Action Cards */
+.action-cards-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* 3-Wide to fill space */
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .action-cards-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.action-card-mini {
+    padding: 1rem;
+    gap: 0.75rem;
+    width: 100%;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.action-icon {
+    font-size: 1rem;
+    color: #fcd34d;
+    margin-top: 2px;
+}
+
+.action-text {
+    font-size: 0.8rem;
+    flex: 1;
+    text-align: left;
+}
+
+/* --- ROW 3: Stacked Sections (One by One) --- */
+.skill-card {
+    grid-column: span 3;
+    min-height: auto;
+    border-top: 4px solid #3b82f6;
+    /* Horizontal Top */
+    border-left: none;
+}
+
+.focus-card {
+    grid-column: span 3;
+    border-top: 4px solid #f87171;
+    /* Horizontal Top */
+    border-left: none;
+}
+
+
+/* ... (Audit internal styles remain mostly same, just ensuring tightness) ... */
+.audit-score-section {
+    flex: 0 0 160px;
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+    /* Vertical Line Separator */
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Right: Content Area */
+.audit-content-area {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* States */
+.audit-lock-state {
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.lock-title {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.btn-audit-run {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    border: none;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    padding: 0.5rem 1.75rem;
+    font-size: 0.9rem;
+    transition: transform 0.2s;
+}
+
+.btn-audit-run:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+}
+
+.lock-subtitle {
+    font-size: 0.75rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+}
+
+/* 2-Column Grid for Details */
+/* 2-Column Grid for Details - Weighted towards Rights */
+.audit-details-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    /* Fixed Left, Wide Right */
+    gap: 2rem;
+    width: 100%;
+    align-self: flex-start;
+}
+
+/* Internal Columns */
+.audit-column-add {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 1.5rem;
+    height: 100%;
+}
+
+.audit-column-update {
+    padding-left: 0.5rem;
+    height: 100%;
+    width: 100%;
+}
+
+.column-header-red,
+.column-header-green,
+.column-header-yellow {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.25rem;
+    display: block;
+    width: 100%;
+}
+
+/* Internals */
+.tags-container {
+    gap: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.tag-red {
+    font-size: 0.75rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    width: fit-content;
+}
+
+.list-item-green {
+    font-size: 0.85rem;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Tiled Action Cards to Fill Space */
+.action-cards-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Tile them 2-wide */
+    gap: 1rem;
+}
+
+.action-card-mini {
+    padding: 1rem;
+    gap: 0.75rem;
+    width: 100%;
+    height: 100%;
+    /* Equal heights */
+    display: flex;
+    align-items: flex-start;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.action-icon {
+    font-size: 1rem;
+    color: #fcd34d;
+    margin-top: 2px;
+}
+
+.action-text {
+    font-size: 0.8rem;
+    flex: 1;
+    text-align: left;
+}
+
+/* Internal Columns */
+.audit-column-add {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    /* Separator */
+    padding-right: 1.5rem;
+    height: 100%;
+}
+
+.audit-column-update {
+    padding-left: 0.5rem;
+    height: 100%;
+}
+
+.column-header-red,
+.column-header-green,
+.column-header-yellow {
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.25rem;
+    display: block;
+    width: 100%;
+}
+
+/* Internals */
+.tags-container {
+    gap: 0.35rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.tag-red {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.list-item-green {
+    font-size: 0.8rem;
+    gap: 0.4rem;
+    margin-bottom: 0.35rem;
+}
+
+.action-cards-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.action-card-mini {
+    padding: 0.75rem;
+    gap: 0.75rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.action-icon {
+    font-size: 1rem;
+    color: #fcd34d;
+}
+
+.action-text {
+    font-size: 0.8rem;
+    flex: 1;
+    text-align: left;
+}
+
+/* --- ROW 3: Stacked Sections (One by One) --- */
+.skill-card {
+    grid-column: span 3;
+    /* Full Width Vertical Stack */
+    min-height: auto;
+    border-left: 4px solid #3b82f6;
+    /* Visual Vertical Marker */
+}
+
+.focus-card {
+    grid-column: span 3;
+    /* Full Width Vertical Stack */
+    border-left: 4px solid #f87171;
+    /* Visual Vertical Marker */
+}
+
+.skill-list-neat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+/* ... (Skill Row styles) ... */
+.skill-row-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.02);
+    text-decoration: none;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+/* ... */
+
+/* Focus Items - Grid for utilization of width, but conceptually one-by-one items */
+.focus-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 Cols since we are wide now */
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .focus-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+.action-item {
+    padding: 0.75rem;
+    border-radius: 6px;
+    gap: 0.25rem;
+    height: 100%;
+    /* Even height */
+}
+
+/* ... */
+.roadmap-card-wide {
+    grid-column: span 3;
+    border-left: 4px solid #10b981;
+    /* Visual Vertical Marker */
+}
+
+/* Roadmap Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.roadmap-header-advisor {
+    font-size: 0.8rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(59, 130, 246, 0.05);
+    border-radius: 8px;
+    border-left: 3px solid #3b82f6;
+    line-height: 1.5;
+}
+
+.roadmap-steps-container {
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.roadmap-step-card-detailed {
+    padding: 1.25rem;
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.8));
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    /* Animation Properties */
+    opacity: 0;
+    /* Start hidden */
+    animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.roadmap-step-card-detailed:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+    background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+}
+
+.step-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 0.65rem;
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+}
+
+.step-main-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.25rem;
+    padding-right: 3rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.step-duration-icon {
+    font-size: 0.75rem;
+    margin-bottom: 1rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.step-tasks-list {
+    gap: 0.6rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.task-item {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    display: flex;
+    align-items: start;
+    gap: 0.6rem;
+}
+
+.task-bullet {
+    min-width: 6px;
+    height: 6px;
+    background: #3b82f6;
+    border-radius: 50%;
+    margin-top: 7px;
+    box-shadow: 0 0 5px #3b82f6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .metric-card,
+    .skill-card,
+    .focus-card,
+    .roadmap-card-wide {
+        grid-column: span 1;
+    }
+
+    .skill-row-neat {
+        flex-wrap: wrap;
+    }
+
+    .skill-track-neat {
+        min-width: 100%;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Loading State */
+.loading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    color: white;
+}
+
+.loading-spinner {
+    font-size: 2.5rem;
+    animation: spin 1.5s infinite linear;
+    margin-bottom: 1rem;
+}
+
+.loading-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.loading-subtitle {
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+/* Buttons */
+.btn-new-assessment {
+    padding: 0.4rem 1rem !important;
+    font-size: 0.8rem !important;
+}
+
+/* Error */
+.error-state {
+    text-align: center;
+    color: #fca5a5;
+    margin-top: 5rem;
+    font-size: 1.1rem;
+}
+
+/* Missing Skills Card */
+.missing-skills-card {
+    grid-column: span 3;
+    /* Full width */
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.missing-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.3);
+    border-radius: 12px;
+    margin-top: 0.5rem;
+}
+
+.category-title {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.missing-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.missing-tag-pill {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid;
+    border-radius: 9999px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .missing-skills-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,111 @@
+/* Layout.css - Premium Structure */
+
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* 1. Container */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* 2. Header - Glassmorphism Sticky Top */
+.app-header {
+    height: var(--header-height);
+    background-color: rgba(11, 16, 32, 0.7);
+    /* Translucent dark bg */
+    backdrop-filter: blur(var(--glass-blur));
+    border-bottom: 1px solid var(--glass-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.brand-logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    letter-spacing: -0.02em;
+}
+
+.brand-logo:hover {
+    color: var(--color-primary);
+}
+
+.main-nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Smooth hover underline animation */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-accent-cyan);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 8px var(--color-accent-cyan);
+}
+
+.nav-link:hover {
+    color: var(--color-text-main);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* 3. Main Content */
+.app-main {
+    flex: 1;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    width: 100%;
+}
+
+/* 4. Footer */
+.app-footer {
+    background-color: rgba(11, 16, 32, 0.9);
+    border-top: 1px solid var(--glass-border);
+    padding: 2rem 0;
+    margin-top: auto;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    backdrop-filter: blur(var(--glass-blur));
+}

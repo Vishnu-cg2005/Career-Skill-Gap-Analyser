@@ -1,0 +1,235 @@
+/* ResumeUpload.css - Premium Glass */
+
+.resume-square-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.resume-upload-square {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-lg);
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-card);
+}
+
+/* Hover State */
+.resume-upload-square:hover {
+    border-color: var(--color-accent-cyan);
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+}
+
+/* Drag Active State */
+.resume-upload-square.drag-active {
+    border-color: var(--color-accent-cyan);
+    background: rgba(0, 212, 255, 0.1);
+    transform: scale(1.05);
+    border-style: solid;
+    box-shadow: 0 0 30px rgba(0, 255, 224, 0.2);
+}
+
+/* Icon & Content Container */
+.upload-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+/* Animated Icon Circle */
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    color: var(--color-text-secondary);
+    transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+}
+
+.resume-upload-square:hover .icon-circle {
+    background: var(--color-primary);
+    color: white;
+    transform: scale(1.1) rotate(10deg);
+    box-shadow: 0 0 20px rgba(108, 99, 255, 0.5);
+    border-color: transparent;
+}
+
+/* Idle Pulse Animation */
+.resume-upload-square:not(:hover):not(.drag-active) .icon-circle {
+    animation: gentlePulse 3s infinite ease-in-out;
+}
+
+@keyframes gentlePulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+}
+
+/* Text Styling */
+.upload-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text-main);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+}
+
+.upload-desc {
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+    max-width: 90%;
+    line-height: 1.6;
+}
+
+/* Uploading State - Scanner Effect */
+.upload-scanning-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 16, 32, 0.95);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.scanner-line {
+    width: 80%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, var(--color-accent-cyan), transparent);
+    position: absolute;
+    top: 0;
+    left: 10%;
+    animation: scanMove 2s infinite ease-in-out;
+    box-shadow: 0 0 15px var(--color-accent-cyan);
+    border-radius: 100%;
+}
+
+@keyframes scanMove {
+    0% {
+        top: 10%;
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 90%;
+        opacity: 0;
+    }
+}
+
+.scanning-text {
+    font-weight: 600;
+    color: var(--color-accent-cyan);
+    margin-top: 2rem;
+    animation: textFade 1.5s infinite;
+    text-shadow: 0 0 10px rgba(0, 255, 224, 0.3);
+}
+
+@keyframes textFade {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* File Success State */
+.upload-success {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 16, 32, 0.9);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.check-icon {
+    width: 72px;
+    height: 72px;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.4);
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Error Toast */
+.error-message {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    padding: 0.5rem 1.25rem;
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    white-space: nowrap;
+    animation: slideUp 0.3s ease-out;
+}

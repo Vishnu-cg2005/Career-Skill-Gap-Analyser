@@ -1,0 +1,349 @@
+/* AnalyzePage.css updates for Search */
+
+.analyze-page-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    animation: fadeIn 0.8s ease-out;
+    color: white;
+}
+
+.analyze-header {
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: slideDown 0.6s ease-out;
+}
+
+.analyze-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent-cyan) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.analyze-subtitle {
+    color: var(--color-text-secondary);
+}
+
+/* Search Bar */
+.role-search-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+}
+
+.role-search-input {
+    width: 100%;
+    padding: 1rem 1.5rem 1rem 3rem;
+    /* Left padding for icon */
+    font-size: 1.1rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 50px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+    /* Glass bg */
+    backdrop-filter: blur(10px);
+    color: white;
+    transition: all 0.2s;
+    box-shadow: var(--shadow-sm);
+}
+
+.role-search-input:focus {
+    border-color: var(--color-accent-cyan);
+    box-shadow: 0 0 0 4px rgba(0, 255, 224, 0.1);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+    font-size: 1.2rem;
+}
+
+/* Grid & Chips */
+.role-grid-dynamic {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+    max-height: 400px;
+    overflow-y: auto;
+    padding: 0.5rem;
+    /* For shadow clipping */
+}
+
+/* Scrollbar styling */
+.role-grid-dynamic::-webkit-scrollbar {
+    width: 6px;
+}
+
+.role-grid-dynamic::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.role-grid-dynamic::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.role-card-compact {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    animation: popIn 0.3s ease-out backwards;
+}
+
+.role-card-compact:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+    border-color: var(--color-secondary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.role-card-compact.selected {
+    border-color: var(--color-accent-cyan);
+    background-color: rgba(0, 255, 224, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 224, 0.2);
+}
+
+.role-icon-small {
+    font-size: 1.5rem;
+}
+
+.role-info {
+    text-align: left;
+}
+
+.role-name-small {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--color-text-main);
+    display: block;
+}
+
+.role-category {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Custom Role Creation */
+.custom-role-prompt {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8fafc;
+    border-radius: 12px;
+    border: 2px dashed var(--color-border);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.custom-role-prompt:hover {
+    background-color: #eff6ff;
+    border-color: var(--color-primary);
+}
+
+/* Animations */
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Section Labels */
+.section-label {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+}
+
+/* Reuse existing review card styles - PREMIUM DARK */
+.review-card {
+    background: var(--glass-bg);
+    padding: 2.5rem;
+    border-radius: 24px;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(16px);
+    box-shadow: var(--shadow-card);
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Skill Analysis Breakdown */
+.skills-breakdown-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.skill-category-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+    height: 100%;
+}
+
+.skill-category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.tech-card {
+    border-top: 4px solid var(--color-secondary);
+}
+
+.soft-card {
+    border-top: 4px solid var(--color-primary);
+}
+
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white !important;
+    /* Override specific colors */
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.skill-badge {
+    padding: 0.6rem 1rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.tech-badge {
+    background: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 0 10px rgba(59, 130, 246, 0.1);
+}
+
+.tech-badge:hover {
+    background: rgba(59, 130, 246, 0.25);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+    transform: scale(1.05);
+}
+
+.soft-badge {
+    background: rgba(147, 51, 234, 0.15);
+    color: #c084fc;
+    border: 1px solid rgba(147, 51, 234, 0.3);
+    box-shadow: 0 0 10px rgba(147, 51, 234, 0.1);
+}
+
+.soft-badge:hover {
+    background: rgba(147, 51, 234, 0.25);
+    box-shadow: 0 0 15px rgba(147, 51, 234, 0.3);
+    transform: scale(1.05);
+}
+
+/* Responsive Grid */
+@media (max-width: 640px) {
+    .skills-breakdown-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Missing Skills Recommendations */
+.missing-skills-section {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+    animation: fadeIn 0.4s ease-out 0.2s backwards;
+}
+
+.missing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.missing-card {
+    background: rgba(255, 100, 100, 0.05);
+    /* Subtle red tint */
+    border: 1px solid rgba(255, 80, 80, 0.2);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.missing-badge {
+    background: transparent;
+    color: #ff8080;
+    border: 1px dashed rgba(255, 100, 100, 0.4);
+    box-shadow: none;
+    font-size: 0.9rem;
+}
+
+.missing-badge:hover {
+    background: rgba(255, 100, 100, 0.1);
+    border-color: #ff6060;
+    transform: translateY(-2px);
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .missing-grid {
+        grid-template-columns: 1fr;
+    }
+}

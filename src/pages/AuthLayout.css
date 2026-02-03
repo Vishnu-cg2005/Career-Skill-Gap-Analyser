@@ -1,0 +1,316 @@
+/* Auth Layout & Animation System */
+.auth-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-bg-body) 0%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dynamic Background Mesh */
+.auth-wrapper::before,
+.auth-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.6;
+    /* Increased opacity for more vibrant look */
+    animation: meshFlow 8s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes meshFlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+}
+
+.auth-wrapper::before {
+    background: radial-gradient(circle, var(--color-primary), var(--color-secondary));
+    top: -20%;
+    left: -20%;
+    animation-delay: 0s;
+}
+
+.auth-wrapper::after {
+    background: radial-gradient(circle, var(--color-accent-pink), var(--color-primary));
+    bottom: -20%;
+    right: -20%;
+    animation-delay: -5s;
+}
+
+/* Glass Card */
+.auth-glass-card {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2.5rem;
+    z-index: 10;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.auth-logo {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    filter: drop-shadow(0 0 15px rgba(108, 99, 255, 0.5));
+    animation: pulse 3s infinite;
+}
+
+.auth-title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-main);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+.auth-subtitle {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+}
+
+/* Floating Input Groups */
+.auth-input-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.auth-input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    /* Darker background for better contrast */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    /* Stronger border */
+    color: white;
+    /* Force white text */
+    padding: 1rem 1rem;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.auth-input::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+    /* Visible placeholder */
+}
+
+.auth-input:focus {
+    border-color: var(--color-primary);
+    background: rgba(11, 16, 32, 0.8);
+    box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2);
+}
+
+.auth-label {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    background: transparent;
+    padding: 0 0.25rem;
+}
+
+.auth-input:focus~.auth-label,
+.auth-input:not(:placeholder-shown)~.auth-label {
+    top: 0;
+    transform: translateY(-50%) scale(0.85);
+    background: var(--color-bg-body);
+    /* Ideally transparent but needs to hide border */
+    background: linear-gradient(to bottom, transparent 40%, rgba(11, 16, 32, 1) 50%, transparent 60%);
+    /* Hacky but works for glass? Or just use small bg patch */
+    background: rgba(11, 16, 32, 1);
+    color: var(--color-accent-cyan);
+    font-weight: 600;
+    z-index: 1;
+}
+
+/* Buttons */
+.auth-btn {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-btn-primary {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #4f46e5 100%);
+    color: white;
+    box-shadow: 0 10px 20px -10px rgba(108, 99, 255, 0.5);
+}
+
+.auth-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 25px -10px rgba(108, 99, 255, 0.6);
+    background: linear-gradient(135deg, #7b73ff 0%, #6366f1 100%);
+}
+
+.auth-btn-primary:active {
+    transform: translateY(0);
+}
+
+.auth-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--color-text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1rem;
+}
+
+.auth-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-text-main);
+}
+
+/* OTP Timer */
+.otp-timer {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    animation: fadeIn 0.5s;
+}
+
+.otp-timer strong {
+    color: var(--color-secondary);
+}
+
+/* Notification Toast */
+.auth-toast {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: #4ade80;
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.auth-toast.error {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.3);
+    color: #f87171;
+}
+
+/* Animations */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 40px);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Link Styling override for auth pages */
+.auth-link {
+    color: var(--color-accent-cyan);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.auth-link:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .auth-glass-card {
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .auth-title {
+        font-size: 1.75rem;
+    }
+}
